@@ -30,7 +30,7 @@ app.use(session({
     saveUninitialized: false, 
     store: store,
     cookie: {
-        maxAge: 60000
+        maxAge: 20000
     }
 }));
 app.use(flash());

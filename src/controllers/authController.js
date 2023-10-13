@@ -33,7 +33,7 @@ exports.PostLogin = async (req, res, next) => {
                 },
                 validationErrors: errors.array()
             })
-        }
+        };
         const user = await User.findOne({email: email});
         const doMatch = await bcrypt.compare(password, user.password);
         if (doMatch) {
@@ -90,6 +90,7 @@ exports.PostSignup = async (req, res, next) => {
     const errors = validationResult(req);
     try {
         if (!errors.isEmpty()) {
+            console.log(errors.array());
             return res.status(400).render('signup', {
                 pageTitle: 'Signup page',
                 path: '/signup',
