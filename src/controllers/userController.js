@@ -18,3 +18,4 @@ exports.getAdminPage = (req, res, next) => {
     }
     res.render('admin', {user: req.session.user, pageTitle: 'Admin page', path: '/admin'});
 }
+conga123
